@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #1F2937;
+    font-family: "Inter", sans-serif;
+}
+
+span {
+    color: #10B981;
+}
+
+h1 {
+    font-family: "Karla", sans-serif;
+    color: white;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+h2 {
+    color: #D5D4D8;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+button, p {
+    color: white;
+    background: #10B981;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: yellow;
+}
+
+p {
+    background: #273549;
+    color: #10B981;
+    flex: 1;
+    max-width: 240px;
+    height: 18px;
+    text-align: center;
+}
+
+.container {
+    padding: 128px 64px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: #2F3E53;
+    text-align: center;
+    margin: 32px auto;
+}
+
+.password-boxes {
+    display: flex;
+    justify-content: space-between;
+}
