@@ -15,8 +15,16 @@
             <button onclick="generatePwd()">Generate password</button>
             <div class="divider"></div>
             <div class="password-boxes">
-                <p id="pwd-one-el"></p>
-                <p id="pwd-two-el"></p>
+                <div>
+                    <p id="pwd-one-el"></p>
+                    <img onclick="copyPwdOne()" id="copy-pwd-1" src="img/icon-copy.svg" alt="copy icon from Material Symbols">
+                    <p id="copy-confirmation-1"></p>
+                </div>
+                <div>
+                    <p id="pwd-two-el"></p>
+                    <img onclick="copyPwdTwo()" id="copy-pwd-2" src="img/icon-copy.svg" alt="copy icon from Material Symbols">
+                    <p id="copy-confirmation-2"></p>
+                </div>
             </div>
         </div>
         <script src="index.js"></script>

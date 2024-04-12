@@ -4,10 +4,14 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let pwdOneEl = document.getElementById("pwd-one-el")
 let pwdTwoEl = document.getElementById("pwd-two-el")
 
+let isPwdGenerated = false
+console.log(isPwdGenerated)
+
+
 function generatePwd() {
     let randomPasswordOne = ""
     let randomPasswordTwo = ""
-    
+
     for(let i = 0; i < 16; i++) {
       randomNumber = Math.floor(Math.random() * characters.length)
       randomPasswordOne += characters[randomNumber]
@@ -19,31 +23,67 @@ function generatePwd() {
         randomPasswordTwo += characters[randomNumber]
       }
       pwdTwoEl.textContent = randomPasswordTwo
+
+    isPwdGenerated = true
+    console.log(isPwdGenerated)
+
+    showCopyBtn()
+
   }
 
-// let pwdOne = []
-// let pwdTwo = []
+function copyPwdOne() {
+    console.log("clicked")
 
-// let pwdOneEl = document.getElementById("pwd-one-el")
-// let pwdTwoEl = document.getElementById("pwd-two-el")
+    let copyText = document.getElementById("pwd-one-el").innerText
+    let el = document.createElement('textarea')
 
-// function generatePwd() {
+    el.value = copyText
+    el.setAttribute('readonly', '')
+    el.style.position = 'absolute'
+    el.style.left = '-9999px'
+    document.body.appendChild(el)
+    el.select()
+    document.body.removeChild(el)    
 
-//     pwdTwoEl.textContent = ""
-//     pwdOneEl.textContent = ""
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(el.value);
 
-//     for (let i = 0; i < 16; i++) {
-//         let randomCharacter = characters[Math.floor(Math.random() * characters.length)]
-//         pwdOne.push(randomCharacter)
-//     }
+    // Alert the copied text
+    // alert("Copied the text: " + el.value);
+    document.getElementById("copy-confirmation-1").textContent = "Copied to clipboard!"
+}
 
-//     pwdOneEl.textContent += pwdOne.join("")
+function copyPwdTwo() {
+    console.log("clicked")
 
-//     for (let i = 0; i < 16; i++) {
-//         let randomCharacter = characters[Math.floor(Math.random() * characters.length)]
-//         pwdTwo.push(randomCharacter)
-//     }
+    let copyText = document.getElementById("pwd-two-el").innerText
+    let el = document.createElement('textarea')
 
-//     pwdTwoEl.textContent += pwdTwo.join("")
+    el.value = copyText
+    el.setAttribute('readonly', '')
+    el.style.position = 'absolute'
+    el.style.left = '-9999px'
+    document.body.appendChild(el)
+    el.select()
+    document.body.removeChild(el)    
 
-// }
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(el.value);
+
+    // Alert the copied text
+    // alert("Copied the text: " + el.value);
+    document.getElementById("copy-confirmation-2").textContent = "Copied to clipboard!"
+}
+
+// FUNCTION TO DISPLAY THE COPY TO CLIPBOARD BUTTONS ONCE THE PASSWORDS ARE GENERATED
+
+function showCopyBtn() {
+  if (isPwdGenerated = true) {
+    document.getElementById("copy-pwd-1").style.display="inline"
+    document.getElementById("copy-pwd-2").style.display="inline"
+
+  } else {
+    document.getElementById("copy-pwd-1").style.display="none"
+    document.getElementById("copy-pwd-2").style.display="none"
+  }
+}

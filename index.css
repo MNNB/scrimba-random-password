@@ -17,6 +17,8 @@ h1 {
     color: white;
     font-size: 40px;
     font-weight: 800;
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
@@ -25,7 +27,7 @@ h2 {
     font-weight: 400;
 }
 
-button, p {
+button, textarea, p {
     color: white;
     background: #10B981;
     border: none;
@@ -33,6 +35,7 @@ button, p {
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 4px;
+    /* height: 40px; */
 }
 
 button:hover {
@@ -43,9 +46,12 @@ p {
     background: #273549;
     color: #10B981;
     flex: 1;
-    max-width: 240px;
-    height: 18px;
+    max-width: 200px;
+    min-height: 18px;
     text-align: center;
+    resize: none;
+    text-align: left;
+    margin-right: 12px;
 }
 
 .container {
@@ -62,7 +68,23 @@ p {
     margin: 32px auto;
 }
 
-.password-boxes {
+.password-boxes>div {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+#copy-pwd-1, #copy-pwd-2 {
+    display: none;
+}
+
+#copy-pwd-1:hover, #copy-pwd-2:hover {
+    transform: scale(1.2);
+    /* background-color: #10B981; */
+}
+
+#copy-confirmation-1, #copy-confirmation-2 {
+    background: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
 }
